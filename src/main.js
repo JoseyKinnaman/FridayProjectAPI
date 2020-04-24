@@ -5,9 +5,18 @@ import $ from "jquery";
 import { CurrencyService } from './../src/currency-service.js';
 
 $(document).ready(function(){
-  (async () => {
-    let currencyService = new CurrencyService()
-    const response = await currencyService.getCurrency();
-    console.log(response);
-  })();
+  $("#currenyConverter").submit(function () {
+    event.preventDefault();
+    const userInput = $('#USD').val();
+    const country = $("#country, #other").val();
+    console.log(country);
+    console.log(userInput);
+    (async () => {
+      let currencyService = new CurrencyService();
+      const response = await currencyService.getCurrency();
+      $("#output").html(
+        `<h3>${userInput} * ${response.currencyObject.conversion_rates}</h3>`);
+      console.log(response);
+    })();
+  });
 });
