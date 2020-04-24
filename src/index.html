@@ -8,12 +8,25 @@
 <body>
   <div class="container">
     <div class="box">
-      <form id="">
-        <label for="USD">Please enter the ammount you would like to convert in USD:</label>
-        <input id="USD" type="number"></input>
-        <label for="Exchange">Please Choose the Currency you would like to Exchange to:</label>
-        <select name="" id=""></select>
-      </form>
+      <h1>USD Currency Converter</h1>
+        <form id="currenyConverter" class="form-group">
+          <label for="USD">Please enter the amount you would like to convert in USD:</label>
+          <input class="form-control" id="USD" type="number"></input>
+          <br>
+          <label for="Exchange">Please Choose the Currency you would like to Exchange to:</label>
+          <select class="form-control" name="country" id="country">
+            <option value="EUR">Europe</option>
+            <option value="GBP">Britain</option>
+            <option value="JPY">Japan</option>
+            <option value="MXN">Mexico</option>
+            <option value="SEK">Sweden</option>
+          </select>
+          <br>
+          <label for="">Other:</label>
+          <input class="form-control" type="text" name="other" id="other">
+          <br>
+          <button type= "submit" id="calculate" class="btn btn-dark">Calculate</button>
+        </form>
 
     </div>
   </div>
