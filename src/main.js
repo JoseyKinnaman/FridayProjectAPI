@@ -12,17 +12,18 @@ $(document).ready(function(){
     (async () => {
       let currencyService = new CurrencyService();
       const response = await currencyService.getCurrency(country,userInput);
+      console.log(response);
       getElements(response);
     })();
 
     function getElements(response){
-      if (response){
-        $("#output").html(`<h3>${response} ${country}</h3>`);
-      } else if ( response === false) {
-        $("#output").html(`<h3> ${response} Currency rate cannot be found" </h3>`
+      if (response) {
+        $("#output").html(`<h3>${response * userInput} ${country}</h3>`);
+      } else if ( response === "NAN") {
+        $("#output").html(`<h3> ${response} Currency rate cannot be found </h3>`
         );
-      } else if (response === error){
-        $('#output').html(`<h3>  ${error} </h3>`);
+      } else if (response === false){
+        $('#output').html(`<h3>  ${response} </h3>`);
       }
     }
   });
