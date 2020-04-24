@@ -7,7 +7,7 @@ import { CurrencyService } from './../src/currency-service.js';
 $(document).ready(function(){
   (async () => {
     let currencyService = new CurrencyService()
-    const response= await currencyService.getCurrency();
+    const response = await currencyService.getCurrency();
     console.log(response);
-  });
+  })();
 });
