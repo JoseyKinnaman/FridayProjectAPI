@@ -1,5 +1,5 @@
 export class CurrencyService {
-  async getCurrency(country, UserInput) {
+  async getCurrency(country, userInput ) {
     try {
       let response = await fetch(
         `https://prime.exchangerate-api.com/v5/${process.env.API_KEY}/latest/USD`
@@ -11,22 +11,22 @@ export class CurrencyService {
         let currency = currencyObject.conversion_rates;
         jsonifiedResponse = currency;
         if ( country === "EUR") {
-          jsonifiedResponse = (currencyObject.conversion_rates.EUR * UserInput);
+          jsonifiedResponse = (currencyObject.conversion_rates.EUR * userInput);
         }
         if (country === "GBP") {
-          jsonifiedResponse = (currencyObject.conversion_rates.GBP * UserInput);
+          jsonifiedResponse = (currencyObject.conversion_rates.GBP * userInput);
         }
         if (country === "JPY") {
-          jsonifiedResponse = currencyObject.conversion_rates.JPY * UserInput;
+          jsonifiedResponse = (currencyObject.conversion_rates.JPY * userInput);
         } 
         if (country === "MXN") {
-          jsonifiedResponse = currencyObject.conversion_rates.MXN * UserInput;
+          jsonifiedResponse = (currencyObject.conversion_rates.MXN * userInput);
         } 
         if (country === "JPY") {
-          jsonifiedResponse = currencyObject.conversion_rates.JPY * UserInput;
+          jsonifiedResponse = (currencyObject.conversion_rates.JPY * userInput);
         } 
         if (country === "SEK") {
-          jsonifiedResponse = currencyObject.conversion_rates.SEK * UserInput;
+          jsonifiedResponse = (currencyObject.conversion_rates.SEK * userInput);
         } 
       } else {
         jsonifiedResponse = false;
