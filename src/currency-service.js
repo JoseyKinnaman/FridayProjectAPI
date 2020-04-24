@@ -7,6 +7,8 @@ export class CurrencyService {
       let jsonifiedResponse;
       if ( response.ok && response.status == 200) {
         jsonifiedResponse = await response.json();
+        let { Conversion_Rates: } = jsonifiedResponse;
+        console.log(Conversion_Rates)
         console.log(jsonifiedResponse)
       } else {
         jsonifiedResponse = false;
