@@ -7,9 +7,24 @@ export class CurrencyService {
       let jsonifiedResponse;
       if ( response.ok && response.status == 200) {
         jsonifiedResponse = await response.json();
-        let { Conversion_Rates: } = jsonifiedResponse;
-        console.log(Conversion_Rates)
-        console.log(jsonifiedResponse)
+        let currencyObject = jsonifiedResponse;
+        let currency = currencyObject.conversion_rates;
+        console.log(currency);
+        // let currencyFive = [
+        //   currency.EUR,
+        //     currency.GBP, 
+        //     currency.JPY, 
+        //     currency.MXN, 
+        //     currency.SEK,
+        // ];
+        //   console.log(currencyFive);
+        jsonifiedResponse = currency;
+        // const europe = currencyObject.conversion_rates.EUR;
+        // const britain = currencyObject.conversion_rates.GBP;
+        // const japan = currencyObject.conversion_rates.JPY;
+        // const mexico = currencyObject.conversion_rates.MXN;
+        // const sweden = currencyObject.conversion_rates.SEK;
+        // console.log(europe, britain, japan, mexico, sweden);
       } else {
         jsonifiedResponse = false;
       }
