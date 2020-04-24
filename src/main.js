@@ -7,16 +7,23 @@ import { CurrencyService } from './../src/currency-service.js';
 $(document).ready(function(){
   $("#currenyConverter").submit(function () {
     event.preventDefault();
-    const userInput = $('#USD').val();
+    const userInput = parseFloat($('#USD').val());
     const country = $("#country, #other").val();
     console.log(country);
     console.log(userInput);
     (async () => {
       let currencyService = new CurrencyService();
-      const response = await currencyService.getCurrency();
-      $("#output").html(
-        `<h3>${userInput} * ${response.currencyObject.conversion_rates}</h3>`);
-      console.log(response);
+      const response = await currencyService.getCurrency(country,userInput);
+      getElements(response);
     })();
+
+    function getElements(response){
+      if (response){
+        $("#output").html(`<h3>${response} ${country}</h3>`);
+      } else {
+        $("#output").html(`<h3> Currency rate cannot be found`);
+      }
+
+    }
   });
 });
