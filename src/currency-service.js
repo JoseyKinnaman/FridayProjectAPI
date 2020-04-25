@@ -28,12 +28,15 @@ export class CurrencyService {
         if (country === "SEK") {
           jsonifiedResponse = currencyObject.conversion_rates.SEK;
         } 
+        if (country === "Litecoin") {
+          jsonifiedResponse = false;
+        }
       } else {
         jsonifiedResponse = false;
       }
       return jsonifiedResponse;
     } catch(error) {
-      console.log("error", error);
+      console.log(error)
       return false;
     }
   }

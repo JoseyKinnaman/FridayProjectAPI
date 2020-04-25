@@ -19,11 +19,11 @@ $(document).ready(function(){
     function getElements(response){
       if (response) {
         $("#output").html(`<h3>${response * userInput} ${country}</h3>`);
-      } else if ( response === "NAN") {
-        $("#output").html(`<h3> ${response} Currency rate cannot be found </h3>`
+      } else if ( response === false) {
+        $("#output").html(`<h3> Currency rate cannot be found. </h3>`
         );
-      } else if (response === false){
-        $('#output').html(`<h3>  ${response} </h3>`);
+      } else{
+        $('#output').html(`<h3> ${response}</h3>`);
       }
     }
   });

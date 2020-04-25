@@ -14,7 +14,6 @@ _An application that takes and inputted amount in USD and converts it back in th
 * Run $ npm install to download necessary dependencies. 
 * Run $ npm run build to create a dist folder with a bundle.js file.
 * Open index.html in web browser or create server by running npm run start.
-* Insert API Key
 * Input your currency amount.
 
 
